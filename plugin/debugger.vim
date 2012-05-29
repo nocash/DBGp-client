@@ -126,29 +126,20 @@ else
   call confirm('debugger.vim: Unable to find debugger.py. Place it in either your home vim directory or in the Vim runtime directory.', 'OK')
 endif
 
-noremap <F1> :python debugger_resize()<cr>
-noremap <F2> :python debugger_command('step_into')<cr>
-noremap <F3> :python debugger_command('step_over')<cr>
-noremap <F4> :python debugger_command('step_out')<cr>
-
 noremap <leader>dr :python debugger_resize()<cr>
 noremap <leader>di :python debugger_command('step_into')<cr>
 noremap <leader>do :python debugger_command('step_over')<cr>
 noremap <leader>dt :python debugger_command('step_out')<cr>
 
-nnoremap ,e :python debugger_watch_input("eval")<cr>A
+nnoremap <leader>de :python debugger_watch_input("eval")<cr>A
 
-noremap <F5> :python debugger_run()<cr>
-noremap <F6> :python debugger_quit()<cr>
+noremap <leader>dr :python debugger_run()<cr>
+noremap <leader>dq :python debugger_quit()<cr>
 
-noremap <F7> :python debugger_command('step_into')<cr>
-noremap <F8> :python debugger_command('step_over')<cr>
-noremap <F9> :python debugger_command('step_out')<cr>
-
-noremap <F11> :python debugger_context()<cr>
-noremap <F12> :python debugger_property()<cr>
-noremap <F11> :python debugger_watch_input("context_get")<cr>A<cr>
-noremap <F12> :python debugger_watch_input("property_get", '<cword>')<cr>A<cr>
+noremap <leader>dc :python debugger_context()<cr>
+noremap <leader>dp :python debugger_property()<cr>
+noremap <leader>dC :python debugger_watch_input("context_get")<cr>A<cr>
+noremap <leader>dP :python debugger_watch_input("property_get", '<cword>')<cr>A<cr>
 
 hi DbgCurrent term=reverse ctermfg=White ctermbg=Red gui=reverse
 hi DbgBreakPt term=reverse ctermfg=White ctermbg=Green gui=reverse
